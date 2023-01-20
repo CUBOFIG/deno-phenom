@@ -1,12 +1,12 @@
-import { config } from './config.ts'
+import { env } from './deps.ts'
 
 const getVideo = async () => {
   const response = await fetch(
     "https://api.twitch.tv/helix/videos?id=1663382590",
     {
       headers: {
-        "Client-Id": config.CLIENT_ID,
-        "Authorization": config.TOKEN_INIT,
+        "Client-Id": env.CLIENT_ID,
+        "Authorization": env.TOKEN_INIT,
       },
     }
   );
@@ -21,8 +21,8 @@ export const getInformation = async (): Promise<Record<string, number | string>>
       method: "GET",
       headers: {
           "Content-Type": "application/json",
-        "Client-Id": config.CLIENT_ID,
-        "Authorization": config.TOKEN_INIT,
+        "Client-Id": env.CLIENT_ID,
+        "Authorization": env.TOKEN_INIT,
       },
     });
 
