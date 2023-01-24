@@ -3,7 +3,7 @@ import "https://deno.land/std@0.173.0/dotenv/load.ts";
 const getVideo = async () => {
   try {
     const response = await fetch(
-      "https://api.twitch.tv/helix/videos?id=1663382590",
+      "https://api.twitch.tv/helix/videos?user_id=144903347&first=1",
       {
         headers: {
           "Client-Id": Deno.env.get("CLIENT_ID") || "",
