@@ -36,3 +36,20 @@ export const getInformation = async () => {
     console.log(error)
   }
 }
+
+export const getTimeLineTwitter = async () => {
+  try {
+    const response = await fetch( "https://api.twitter.com/2/users/1264985002825199617/tweets", {
+      method: "GET",
+      headers: {
+        "Authorization": Deno.env.get("AUTH_TWITTER") || ""
+      },
+    });
+
+    const datajson = await response.json()
+
+    return datajson  
+  } catch (error) {
+    console.log(error) 
+  }
+}
